@@ -1,5 +1,5 @@
 #Exercise 43
-
+from random import randint
 #The scence is an object
 class Scene(object):
 
@@ -24,7 +24,8 @@ class Engine(object):
             next_scene_name = current_scene.enter()
             current_scene = self.scene_map.next_scene(next_scene_name)
 
-        #Got an error don't know why
+        last_scene
+
 
 
 #Death is a scene
@@ -127,6 +128,7 @@ class LaserWeaponArmory(Scene):
 
             return 'the_bridge'
 
+        return 'death'
 
 
 
@@ -201,23 +203,37 @@ class EscapePod(Scene):
                      ship at the same time. You won!""")
             return 'finished'
 
+class Finished(Scene):
+
+    def enter(self):
+        print("You won! Good job.")
+        return "finished"
 
 #Map is an object
 class Map(object):
 
+    scenes = {"central_corridor":CentralCorridor(),
+              "laser_weapon_armory":LaserWeaponArmory(),
+              "the_bridge":TheBridge(),
+              "escape_pod":EscapePod(),
+              "death":Death(),
+              "finished":Finished()
+              }
+
     #Map has an init function that has a start scene
     def __init__(self, start_scene):
-        pass
+        self.start_scene = start_scene
 
-    #Map has a next scene
     def next_scene(self, scene_name):
-        pass
 
-    #Map has an opening scene
+        return self.scenes.get(scene_name)
+
+
     def opening_scene(self):
+        return self.next_scene('central_corridor')
 
-        CenCor = CentralCorridor()
-        CenCor.enter()
+
+
 
 #a_map is a Map instance with the start_scene
 #value 'central_corridor'
