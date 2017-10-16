@@ -145,12 +145,62 @@ class TheBridge(Scene):
         print("What do you do?")
         action = input(">")
 
+        if action == "throw the bomb":
+            print("""In a panic you throw the bomb at the group of
+                     Gothons and make a leap for the door. Right as
+                     you drop it a Gothon shoots you right in the back
+                     killing you. As you die you see another Gothon
+                     desperately trying to disarm the bomb. You die knowing
+                     they will probably blow up when it goes off.""")
+
+        elif action == "slowly place the bomb":
+            print("""You point your blaster at the bomb under your arm
+                     and the Gothons put their hands up and start to sweat.
+                     You inch backward to the door, open it, and then
+                     carefully place the bomb on the floor, pointing
+                     your blaster at it. You then jump back through the door,
+                     punch the close button and blast the lock so the Gothon's
+                     can't get out. Now that the bomb is placed you run to the
+                     escape pod to get off this ship.""")
+
+            return 'escape_pod'
+
+        else:
+            print("DOES NOT COMPUTE!")
+            return "the_bridge"
+
 
 #EscapePod is a scene
 class EscapePod(Scene):
 
     def enter(self):
-        pass
+        print("""You rush through the ship desparately trying to
+                 make it to the escape pod before the whole ship
+                 exploedes. It seems like hardly any Gothons are
+                 on the ship, so your run is clear of interference.
+                 You get to the chamber with the escape pods, and
+                 now need to pick one to take. Some of them could
+                 be damaged but you don't have time to look.
+                 There's 5 pods which one do you take""")
+
+        good_pod = randint(1,5)
+        guess = input("[pod#]")
+
+        if guess != str(good_pod):
+            print("""You jump into pod {guess} and hit the eject button.
+                     The pod escapes out into the void of space, then
+                     implodes as the hull ruptures, crushing your body into
+                     jam jelly""")
+            return 'death'
+
+        else:
+            print("""You jump into pod {guess} and hit the eject button.
+                     The pod easily slides out into space heading planet below.
+                     As it flies to the planet, you look back and see your ship
+                     implode then explode like a bright star, taking out the Gothon
+                     ship at the same time. You won!""")
+            return 'finished'
+
 
 #Map is an object
 class Map(object):
