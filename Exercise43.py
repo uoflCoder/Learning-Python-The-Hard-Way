@@ -97,6 +97,7 @@ class CentralCorridor(Scene):
             print("DOES NOT COMPUTE!")
             return 'central_corridor'
 
+#LaserWeaponArmory is a scene
 class LaserWeaponArmory(Scene):
 
     def enter(self):
@@ -123,19 +124,27 @@ class LaserWeaponArmory(Scene):
                      letting gas out. You grab the neutron bomb and run
                      as fast as you can to the bridge where you must place
                      it in the right spot""")
-                     
 
-#LaserWeaponArmory is a scene
-class LaserWeaponArmory(Scene):
+            return 'the_bridge'
 
-    def enter(self):
-        pass
+
+
 
 #TheBridge is a scene
 class TheBridge(Scene):
 
     def enter(self):
-        pass
+        print("""You burst onto the Bridge with the neutron
+                 destruct bomb under your arm and surprise 5 Gothons
+                 who are trying to take control of the ship. Each
+                 one of them has an even uglier clown costume than
+                 the last. They haven't pulled their weapons out yet,
+                 as they see the active bomb under your arm and don't
+                 want to set it off.""")
+
+        print("What do you do?")
+        action = input(">")
+
 
 #EscapePod is a scene
 class EscapePod(Scene):
