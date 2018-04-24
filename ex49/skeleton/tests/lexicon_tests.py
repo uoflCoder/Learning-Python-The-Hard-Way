@@ -1,5 +1,5 @@
 from nose.tools import *
-from ex48.lexicon import lexicon
+from ex49.lexicon import lexicon
 
 
 lexicon = lexicon()
