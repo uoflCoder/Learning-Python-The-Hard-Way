@@ -30,7 +30,7 @@ class lexicon(object):
 
             else:
                 try:
-                    
+
                     final_answer.append(('number', int(input[i])))
 
                 except:
