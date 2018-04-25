@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 class lexicon(object):
 
     def __init__(self):
@@ -30,7 +37,7 @@ class lexicon(object):
 
             else:
                 try:
-                    
+
                     final_answer.append(('number', int(input[i])))
 
                 except:
